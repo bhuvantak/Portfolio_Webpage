@@ -1,0 +1,334 @@
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: calc(100vh - 56px); */
+    /* padding-top: 56px; */
+    height: 100%;
+    margin-top: 10rem;
+    
+}
+
+.nav-item .nav-link:hover{
+    color: #165fcc;
+}
+.nav-item .nav-link{
+  font-size: larger;
+  font-weight: 600;
+
+  color:#333
+}
+.navbar-brand{
+  font-size: x-large;
+  font-weight: 800;
+  font-family: cursive;
+}
+
+
+.text-content {
+    text-align: left;
+    font-size: 2rem;
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    color: #343a40;
+}
+
+.text-content .dynamic-text {
+    font-size: 2rem;
+    color: #0d6efd;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.text-content .description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+  font-size: 30px; /* Increased icon size */
+  margin: 0 15px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+.social-icons a i{
+  font-size:2rem ;
+}
+
+.image-content img {
+    max-width: 100%;
+    width: 30rem;
+    height: auto;
+    border-radius:50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  display: inline-block;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+
+/* Style the hamburger menu */
+.navbar-toggler {
+    border: none; /* Remove default border */
+    background-color: transparent; /* Transparent background */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #333; /* Dark color for the hamburger icon */
+    width: 30px;
+    height: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Add custom animation when toggling */
+  .navbar-toggler.collapsed .navbar-toggler-icon {
+    transform: rotate(0deg); /* Default (not rotated) */
+    opacity: 1;
+  }
+  
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    transform: rotate(45deg); /* Rotate on open */
+    opacity: 0.7;
+    background-color: #ff6347; /* Change to a different color when toggled */
+  }
+  
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+    content: ''; 
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background-color: #ff6347; /* Add another line to form a cross */
+    transform: rotate(90deg);
+  }
+  
+  /* Dropdown Menu Styling */
+  .navbar .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with slight transparency */
+    border: none; /* Remove border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+  }
+  
+  /* Optionally, you can add hover effects to make it interactive */
+  .navbar .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+    color: #fff; /* White text on*/
+  }  
+
+  .resume-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.resume-btn i {
+    margin-right: 8px;
+}
+
+.resume-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 6px 14px rgba(0, 86, 179, 0.4);
+    transform: translateY(-2px);
+}
+
+.social-icons a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+/* ✅ Contact Section Styling */
+
+.contact-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  color: #fff;
+  text-align: center;
+}
+
+/* ✅ Contact Text */
+.contact-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+/* ✅ Stylish Contact Card */
+.contact-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ Form Inputs */
+.contact-card .form-control {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-card .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-card .form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+
+.btn-glow {
+  background: #ff5733;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.btn-glow:hover::before {
+  width: 120%;
+  height: 120%;
+  opacity: 1;
+}
+
+.btn-glow:hover {
+  background: #ff4500;
+  transform: translateY(-2px);
+}
+
+/* portfolio page styling*/
+.hospi_project .card {
+  padding: 10px;
+  border-radius: 8%;
+  box-shadow: 0 0 20px red;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.hospi_project .card:hover {
+  box-shadow: 0 0 20px blueviolet;
+}
+
+.card img {
+  width: 100%;              /* Ensure the image takes up the full width */
+  height: 200px;            /* Set a fixed height for all images */
+  object-fit:fill;        /* Ensures the image covers the space without distortion */
+  border-radius: 10px;      /* Optional: adds some rounding to the image */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the content is spaced properly */
+  flex-grow: 1;
+
+}
+
+.card-body .mt-auto {
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+
+@media (max-width: 576px) {
+  .hospi_project .card {
+    padding: 5px;
+  }
+}
+.dynamic-text {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  position: relative;
+  color: white;
+  /* text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00, 0 0 15px #0000ff; */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.glitch {
+  animation: glitch-animation 0.5s infinite alternate;
+}
+
+@keyframes glitch-animation {
+  0% {
+      text-shadow: 2px 2px #ff0000, -2px -2px #00ff00;
+      transform: translate(2px, -2px);
+  }
+  50% {
+      text-shadow: -2px -2px #ff0000, 2px 2px #00ff00;
+      transform: translate(-2px, 2px);
+  }
+  100% {
+      text-shadow: 2px -2px #ff0000, -2px 2px #00ff00;
+      transform: translate(2px, 2px);
+  }
+}
+
+
+

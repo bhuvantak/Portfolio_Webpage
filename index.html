@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhuvan Tak</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- ✅ Navbar (No Sidebar) -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Bhuvan Tak</a>
+        
+        <!-- ✅ Correct Bootstrap Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mt-3 ">
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item px-3"><a class="nav-link" href="about_Me.html">About Me</a></li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="certificate.html">Certifications</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="skills.html">Skills</a>
+                </li>
+                
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ✅ Main Content -->
+<div class="container content-container h">
+    <div class="row w-100">
+        <!-- Profile Image -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="image-content">
+                <img src="img.png" alt="Profile Image">
+            </div>
+        </div>
+        <!-- Text Section -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="text-content">
+                <h1>Hi, I'm</h1>
+                <p class="dynamic-text">A Data Analyst</p>
+                <p class="description">
+                    I'm passionate about building beautiful, responsive websites and leveraging data insights to solve problems.
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/bhuvan-tak-958b9722b/" target="_blank" class="bounce">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/bhuvantak" target="_blank" class="bounce">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <a href="BhuvanTak.pdf" download class="btn btn-primary resume-btn">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

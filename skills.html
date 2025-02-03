@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhuvan Tak</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Bhuvan Tak</a>
+        <!-- ✅ Bootstrap's built-in toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mt-3">
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item px-3"><a class="nav-link" href="about_Me.html">About Me</a></li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="certificate.html">Certifications</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="skills.html">Skills</a>
+                </li>
+                
+                <li class="nav-item px-4">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<section id="skills" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">My Skills</h2>
+        
+        <!-- Hint Text -->
+        <p class="text-muted">Click on a category to explore my skills!</p>
+
+        <!-- Skill Categories -->
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <button class="btn custom-btn" onclick="showSkills('webdev')">Web Development</button>
+            <button class="btn custom-btn" onclick="showSkills('data')">Data Analytics</button>
+            <button class="btn custom-btn" onclick="showSkills('problem')">Problem Solving</button>
+        </div>
+
+        <!-- Flowchart Container -->
+        <div class="flowchart mt-5" id="skill-icons"></div>
+    </div>
+</section>
+
+<style>
+    .skill-box {
+        display: inline-block;
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        width: 150px;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.6s ease-out;
+    }
+
+    .skill-icon {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+    }
+
+    /* Glow effect for icons */
+    .glow {
+        animation: glowEffect 1.5s infinite alternate;
+    }
+
+    @keyframes glowEffect {
+        from { text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); }
+        to { text-shadow: 0 0 25px rgba(0, 255, 255, 1); }
+    }
+
+    /* Flowchart layout */
+    .flowchart {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    /* Custom Button Styling */
+    .custom-btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(90deg, #007bff, #6610f2);
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+        transition: all 0.3s ease-in-out;
+        animation: buttonGlow 1.5s infinite alternate;
+    }
+
+    .custom-btn:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes buttonGlow {
+        from { box-shadow: 0 0 10px rgba(0, 123, 255, 0.8); }
+        to { box-shadow: 0 0 20px rgba(0, 123, 255, 1); }
+    }
+</style>
+
+<script>
+    const skills = {
+        webdev: [
+            { icon: "fab fa-html5 text-danger", name: "HTML" },
+            { icon: "fab fa-css3-alt text-primary", name: "CSS" },
+            { icon: "fab fa-js text-warning", name: "JavaScript" },
+            { icon: "fab fa-react text-info", name: "React" },
+            { icon: "fab fa-node text-success", name: "Node.js" },
+            { icon: "fas fa-server text-dark", name: "Express.js" },
+            { icon: "fas fa-database text-success", name: "MongoDB" }
+        ],
+        data: [
+            { icon: "fab fa-python text-success", name: "Python" },
+            { icon: "fas fa-database text-dark", name: "SQL" },
+            { icon: "fas fa-chart-line text-danger", name: "Data Visualization" },
+            { icon: "fas fa-file-excel text-success", name: "Excel" },
+            { icon: "fas fa-chart-bar text-warning", name: "Power BI" },
+            { icon: "fas fa-table text-primary", name: "Tableau" }
+        ],
+        problem: [
+            { icon: "fas fa-brain text-warning", name: "Logic" },
+            { icon: "fas fa-code text-primary", name: "Competitive Coding" },
+            { icon: "fas fa-puzzle-piece text-info", name: "Problem Solving" }
+        ]
+    };
+
+    function showSkills(category) {
+        const skillContainer = document.getElementById("skill-icons");
+        skillContainer.innerHTML = "";
+
+        skills[category].forEach((skill, index) => {
+            const div = document.createElement("div");
+            div.classList.add("skill-box");
+            div.innerHTML = `<i class="${skill.icon} skill-icon glow"></i><p>${skill.name}</p>`;
+            skillContainer.appendChild(div);
+
+            // Delay appearance for flow effect
+            setTimeout(() => {
+                div.style.opacity = "1";
+                div.style.transform = "scale(1)";
+            }, index * 300);
+        });
+    }
+</script>
+
+
+
+
+<script src="index.js">
+   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

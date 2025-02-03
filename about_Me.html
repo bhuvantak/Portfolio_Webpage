@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Life Journey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Body & Font Setup */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f2f6;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 42px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Card Styles */
+        /* Card Deck Styling */
+.card-deck {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Card Styling */
+.card {
+    width: 320px;
+    height: 380px;
+    margin: 10px;
+    perspective: 1500px;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Card Inner Wrapper */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Flip Effect */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Card Front and Back Styling */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Front of Card */
+.card-front {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card-front img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front p {
+    font-size: 16px;
+    color: #666;
+    font-weight: normal;
+}
+
+.card-front .hint {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Back of Card */
+.card-back {
+    background-color: #00bcd4;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align text to the top */
+    text-align: center;
+    font-size: 16px;
+    padding: 30px;
+    border-radius: 20px;
+    transform: rotateY(180deg);
+    opacity: 0.9;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 15px; /* To prevent text from getting cut off */
+}
+
+/* Back Card Content Styling */
+.card-back p {
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .card-deck {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 250px;
+        height: 350px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Bhuvan Tak</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mt-3">
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item px-3"><a class="nav-link" href="about_Me.html">About Me</a></li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="certificate.html">Certifications</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>📌 My Life Journey</h2>
+
+        <div class="card-deck">
+            <!-- College Card -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="logo.jpeg" alt="College" />
+                        <p>📚 College Days</p>
+                        <p class="hint">Hover to see more</p> <!-- Hover Hint -->
+                    </div>
+                    <div class="card-back">
+                        <p>During my time in college, I pursued a Bachelor's degree in Science (**BSc**) with a focus on
+                            developing analytical and problem-solving skills. It was here that I first discovered my passion for
+                            coding and technology. I was introduced to programming languages like **Python** and **C**, which
+                            sparked my interest in the world of computer science. This foundation not only sharpened my logical
+                            thinking but also gave me the confidence to dive deeper into web development and other tech-related
+                            fields. I also took part in various college hackathons and coding competitions, which helped me
+                            improve my skills and expand my knowledge..</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internship Card -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="internship.jpeg" alt="Internship" />
+                        <p>💼 Internship</p>
+                        <p class="hint">Hover to see more</p> <!-- Hover Hint -->
+                    </div>
+                    <div class="card-back">
+                        <p> After completing my academic coursework, I had the opportunity to intern at a **web development
+                            company**, where I worked alongside seasoned developers on several live projects. During my
+                            internship, I was able to apply the theoretical knowledge I gained in college to real-world
+                            situations. I helped develop the front-end and back-end of websites using technologies like **HTML**,
+                            **CSS**, **JavaScript**, and **PHP**. This hands-on experience not only boosted my technical skills but
+                            also improved my ability to collaborate in a team environment, communicate effectively with clients,
+                            and meet project deadlines. It was a pivotal moment in my career, as it reinforced my desire to pursue
+                            a career in web development..</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analytics Card -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="da_training.png" alt="Data Analytics" />
+                        <p>📊 Data Analytics</p>
+                        <p class="hint">Hover to see more</p> <!-- Hover Hint -->
+                    </div>
+                    <div class="card-back">
+                        <p>Realizing the potential of data-driven decisions in today’s digital age, I enrolled in a **Data
+                            Analytics course** to expand my skill set. This course provided me with in-depth knowledge of data
+                            manipulation, analysis, and visualization using tools such as **Python (with libraries like pandas, 
+                            NumPy, and matplotlib)**, **SQL**, and **Excel**. I worked on various hands-on projects, such as
+                            analyzing business sales data, visualizing trends, and identifying key insights that would drive
+                            decision-making. This experience has not only broadened my technical expertise but also opened up
+                            opportunities to understand how data plays a crucial role in improving business strategies and
+                            optimizing processes. I feel confident in applying my skills in data analysis to solve real-world
+                            challenges and contribute effectively to business growth..</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
